@@ -5,13 +5,20 @@ from rest_traversal import rest_api, db
 
 
 CUSTOMERS = {
+    'super': {
+        'customer_id': None,
+        'password': 'duper',
+        'group': 'admin'
+    },
     'sly': {
-        'customer_id': 1,
-        'password': 'zx8'
+        'customer_id': None,
+        'password': 'zx8',
+        'group': 'staff'
     },
     'daniel': {
-        'customer_id': 2,
-        'password': 'spree'
+        'customer_id': 1,
+        'password': 'spree',
+        'group': 'customers'
     }
 }
 
@@ -26,7 +33,8 @@ def auth(username, password, request):
         return None
 
     return [
-        'c:{}'.format(customer['customer_id'])
+        'c:{customer_id}'.format(**customer),
+        'g:{group}'.format(**customer)
     ]
 
 

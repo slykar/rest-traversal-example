@@ -34,7 +34,7 @@ def seed_db():
         for n in range(0, args.number):
             customer = dbmodels.Customer(name=fake.company())
             for n2 in range(0, args.number):
-                customer.offers.append(dbmodels.Offer(
+                customer.orders.append(dbmodels.Order(
                     amount=fake.pyint(),
                     created_at=fake.date_time_this_month()
                 ))

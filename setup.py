@@ -25,6 +25,10 @@ requires = [
     'marshmallow'
 ]
 
+tests_require = [
+    'pytest'
+]
+
 setup(name='rest_traversal',
       version='0.0',
       description='rest_traversal',
@@ -42,8 +46,9 @@ setup(name='rest_traversal',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
-      test_suite='rest_traversal',
+      test_suite='tests',
       install_requires=requires,
+      tests_require=tests_require,
       extras_require={
           'DEV': ['fake-factory']
       },

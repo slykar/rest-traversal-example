@@ -10,8 +10,8 @@ class Customer(db.Base):
     name = sa.Column(sa.String(128), unique=True)
 
 
-class Offer(db.Base):
-    __tablename__ = 'api_offers'
+class Order(db.Base):
+    __tablename__ = 'api_orders'
     id = sa.Column(sa.Integer, primary_key=True)
     customer_id = sa.Column(sa.Integer, sa.ForeignKey(Customer.id))
     amount = sa.Column(sa.Integer, nullable=False)
@@ -24,4 +24,4 @@ class Offer(db.Base):
 
     # ===== Relations =====
 
-    customer = orm.relationship(Customer, backref='offers')
+    customer = orm.relationship(Customer, backref='orders')
