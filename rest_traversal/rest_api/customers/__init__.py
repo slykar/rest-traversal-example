@@ -55,15 +55,12 @@ class CustomerQuery(qo.QueryObject):
 
 
 class CustomerList(rest.APICollectionEndpoint):
+    __acl__ = acl.StaffAcl()
 
     schema = CustomerSchema
     endpoints = [
         (r'\d+', CustomerEntity),
     ]
-
-    @property
-    def __acl__(self):
-        return acl.StaffAcl()
 
     def create(self, request, serialized):
         pass

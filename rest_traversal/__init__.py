@@ -47,6 +47,6 @@ def main(global_config, **settings):
     config.set_authorization_policy(ACLAuthorizationPolicy())
     config.add_route('login', '/login')
     config.scan('rest_traversal.views')
-    # TODO create an include option
-    config.include('spree.rest.traversal.view')
+    # Include REST Traversal views
+    config.include('spree.rest.traversal.views')
     return config.make_wsgi_app()

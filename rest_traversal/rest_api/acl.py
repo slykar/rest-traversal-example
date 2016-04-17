@@ -8,3 +8,12 @@ class StaffAcl(object):
             (security.Allow, 'g:staff', security.ALL_PERMISSIONS),
             (security.Deny, security.Everyone, security.ALL_PERMISSIONS)
         ]
+
+
+class AdminAcl(object):
+
+    def __call__(self):
+        return [
+            (security.Allow, 'g:staff', security.ALL_PERMISSIONS),
+            (security.Deny, security.Everyone, security.ALL_PERMISSIONS)
+        ]
