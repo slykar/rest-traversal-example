@@ -2,7 +2,7 @@ from spree import rest
 from rest_traversal import db
 
 
-class AlchemyCollection(rest.APICollectionEndpoint):
+class AlchemyCollection(rest.APICollection):
 
     query = None
 
@@ -15,7 +15,7 @@ class AlchemyCollection(rest.APICollectionEndpoint):
         return self.query(request).run()
 
 
-class AlchemyEntity(rest.APIEntityEndpoint):
+class AlchemyEntity(rest.APIEntity):
     model = None
 
     def update(self, request, deserialized):

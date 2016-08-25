@@ -25,7 +25,7 @@ class CustomerSchema(marshmallow.Schema):
         fields = ('id', 'name')
 
 
-class CustomerEntity(rest.APIEntityEndpoint):
+class CustomerEntity(rest.APIEntity):
     schema = CustomerSchema
     endpoints = [
         ('orders', CustomerOrderList)
@@ -54,7 +54,7 @@ class CustomerQuery(qo.QueryObject):
         return db.session.query(dbmodels.Customer)
 
 
-class CustomerList(rest.APICollectionEndpoint):
+class CustomerList(rest.APICollection):
     __acl__ = acl.StaffAcl()
 
     schema = CustomerSchema

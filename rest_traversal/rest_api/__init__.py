@@ -26,5 +26,30 @@ class RentalAPI(rest.APIEndpoint):
 
 
 def bootstrap(request):
+    """
+    :type request: pyramid.request.Request
+    :return:
+    """
+
+    """
+    This is how a version switching could work based on QS ``v`` parameter,
+    or url structure, so:
+
+    `/v1/customers`     == `/customers?v=1`
+    `/v2/customers`     == `/customers?v=2`
+
+    Note that this allows you to do something like this:
+
+    `/v2/customers?v=1` == `/v1/customers`
+    """
+
+    version = request.GET['v']
+
     api = RentalAPI(request)
+
+    if version == '1':
+        api = api['v1']
+    elif version == '2':
+        api = api['v2']
+
     return api

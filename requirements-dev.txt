@@ -1,0 +1,31 @@
+colander==1.2
+fake-factory==0.5.7
+iso8601==0.1.11
+Mako==1.0.4
+MarkupSafe==0.23
+marshmallow==2.7.0
+PasteDeploy==1.5.2
+psycopg2==2.6.1
+py==1.4.31
+Pygments==2.1.3
+pyramid==1.6.1
+pyramid-debugtoolbar==2.4.2
+pyramid-mako==1.0.2
+pyramid-tm==0.12.1
+pytest==2.9.1
+python-dateutil==2.5.2
+repoze.lru==0.6
+-e git+git@bitbucket.org:spreenauten/rest-traversal-example.git@7e941418cd03c56af223edcb2fd7744c9ffa0a30#egg=rest_traversal
+simplejson==3.8.2
+six==1.10.0
+-e git+git@bitbucket.org:spreenauten/python-spree-filter.git@7cdb3179f8ed4fd9fae64a73fd1e1f3ac8f9ef6f#egg=spree.filter
+-e git+git@bitbucket.org:spreenauten/python-spree-rest.git@520b347c74f9215bb24b0fd159e784a370b1d512#egg=spree.rest
+SQLAlchemy==1.0.12
+transaction==1.4.4
+translationstring==1.3
+venusian==1.0
+waitress==0.9.0b0
+WebOb==1.6.0
+zope.deprecation==4.1.2
+zope.interface==4.1.3
+zope.sqlalchemy==0.7.6

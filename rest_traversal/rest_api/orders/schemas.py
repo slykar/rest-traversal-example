@@ -22,4 +22,5 @@ class OrderUpdateSchema(marshmallow.Schema):
 
 class OrderSchema(OrderUpdateSchema):
     id = fields.Integer()
+    paid = fields.Boolean()
     customer_id = fields.Integer()

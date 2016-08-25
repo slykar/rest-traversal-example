@@ -2,7 +2,7 @@ from pyramid.config import Configurator
 from pyramid.authorization import ACLAuthorizationPolicy
 from pyramid.authentication import BasicAuthAuthenticationPolicy
 from rest_traversal import rest_api, db
-
+import cornice
 
 CUSTOMERS = {
     'super': {
@@ -46,7 +46,8 @@ def main(global_config, **settings):
     config.set_authentication_policy(BasicAuthAuthenticationPolicy(check=auth))
     config.set_authorization_policy(ACLAuthorizationPolicy())
     config.add_route('login', '/login')
-    config.scan('rest_traversal.views')
+    config.scan('rest_traversal')
     # Include REST Traversal views
+    config.include('spree.rest')
     config.include('spree.rest.traversal.views')
     return config.make_wsgi_app()

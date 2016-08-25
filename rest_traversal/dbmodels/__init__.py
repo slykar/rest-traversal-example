@@ -15,6 +15,7 @@ class Order(db.Base):
     id = sa.Column(sa.Integer, primary_key=True)
     customer_id = sa.Column(sa.Integer, sa.ForeignKey(Customer.id))
     amount = sa.Column(sa.Integer, nullable=False)
+    paid = sa.Column(sa.Boolean, default=False)
     created_at = sa.Column(
         sa.DateTime(),
         nullable=False,
